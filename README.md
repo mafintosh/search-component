@@ -3,13 +3,13 @@
 A [HUI](https://github.com/hyperdivision/hui) component for structuring search
 
 ```
-npm install search-component
+npm install @mafintosh/search-component
 ```
 
 ## Usage
 
 ``` js
-const Search = require('search-component')
+const Search = require('@mafintosh/search-component')
 
 const s = new Search({
   result (data, index) {

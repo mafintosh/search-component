@@ -1,5 +1,5 @@
 {
-  "name": "search-component",
+  "name": "@mafintosh/search-component",
   "version": "1.0.0",
   "description": "A HUI component for search",
   "main": "index.js",
