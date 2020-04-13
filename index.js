@@ -90,7 +90,9 @@ module.exports = class Search extends Component {
       const v = inp.value.trim()
       if (v === prev) return
       prev = v
+      const old = self.iterator
       self.iterator = self.query(v)
+      if (old) old.destroy()
       self.results = []
       self.list.resize(0)
       self.list.reset()
