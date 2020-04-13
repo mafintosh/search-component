@@ -1,0 +1,21 @@
+{
+  "name": "search-component",
+  "version": "0.0.0",
+  "description": "A HUI component for search",
+  "main": "index.js",
+  "dependencies": {
+    "hui": "^1.3.0",
+    "infinilist": "^1.2.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/search-component.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/search-component/issues"
+  },
+  "homepage": "https://github.com/mafintosh/search-component"
+}
