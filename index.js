@@ -94,6 +94,7 @@ module.exports = class Search extends Component {
       self.results = []
       self.list.resize(0)
       self.list.reset()
+      self.loading = false
       if (self.iterator) self._loadMore()
     }
   }
