@@ -14,6 +14,7 @@ module.exports = class Search extends Component {
     this.results = null
     this.list = new Infinilist(render, { total: 0 })
     this.loading = false
+    this.input = opts.input || null
     this.attrs = attrs || {}
 
     function render (index) {
@@ -66,24 +67,31 @@ module.exports = class Search extends Component {
       else root[key] = this.attrs[key]
     }
 
-    const inp = document.createElement('input')
+    const inp = this.input || document.createElement('input')
     const res = document.createElement('div')
 
-    inp.type = 'text'
+    inp.type = 'search'
     inp.onkeydown = onkeydown
+    inp.oninput = oninput
     res.className = 'results'
 
     res.appendChild(this.list.element)
-    root.appendChild(inp)
+    if (!this.input) root.appendChild(inp)
     root.appendChild(res)
 
     onchange(inp)
     return root
 
     function onkeydown (e) {
+      if (e.keyCode === 13) {
+        clearTimeout(timeout)
+        onchange(this)
+      }
+    }
+
+    function oninput () {
       if (timeout) clearTimeout(timeout)
-      if (e.keyCode === 13) onchange(this)
-      else timeout = setTimeout(onchange, 250, this)
+      timeout = setTimeout(onchange, 250, this)
     }
 
     function onchange (inp) {
